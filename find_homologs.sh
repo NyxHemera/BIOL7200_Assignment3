@@ -8,7 +8,7 @@ output_file="$3"
 tmp_file=$(mktemp)
 trap 'rm -f "$tmp_file"' EXIT
 
-blastx -query "$query_file" -subject "$subject_file" \
+tblastn -query "$query_file" -subject "$subject_file" \
     -outfmt '6 qseqid sseqid pident length qlen evalue bitscore' \
     > "$tmp_file"
 
